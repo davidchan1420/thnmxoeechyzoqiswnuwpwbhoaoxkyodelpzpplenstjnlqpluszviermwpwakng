@@ -95,13 +95,26 @@ public class CalendarUtil {
 
 	public static Date getDateByString(String dateString, String dateFormat) {
 
+		Calendar calendar= getCalendarByString(dateString, dateFormat);
+		return calendar.getTime();
+	}
+	
+	public static Calendar getCalendarByString(String dateString) {
+		return getCalendarByString(dateString, DEFAULT_DATE_FORMAT);
+	}
+	
+	public static Calendar getCalendarByString(String dateString, String dateFormat) {
+
 		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
 
 		try {
 			Date date = sdf.parse(dateString);
-			return date;
+			Calendar calendar = getSystemCalendar(); 
+			calendar.setTime(date);
+			return calendar;
+			
 		} catch (ParseException e) {
-			return getSystemCalendar().getTime();
+			return getSystemCalendar();
 		}
 	}
 
