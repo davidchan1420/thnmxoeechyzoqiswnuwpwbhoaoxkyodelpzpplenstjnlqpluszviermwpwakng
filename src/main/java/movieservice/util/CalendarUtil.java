@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class CalendarUtil {
@@ -37,6 +38,12 @@ public class CalendarUtil {
 		// System.out.println("CalendarUtil ----- getSystemCalendar(), TimeZone:"+currCal.getTimeZone().getDisplayName()+", rtn Time:"+currCal.getTime()+", timeInMillis:"+currCal.getTimeInMillis());
 		return currCal;
 	}
+	
+//	public static Calendar getSystemCalendar(Locale locale){
+//		
+//		Calendar currCal = Calendar.getInstance(TimeZone.getDefault(), locale);
+//		return currCal;
+//	}
 
 	public static Date getSystemDate() {
 		return getSystemCalendar().getTime();
@@ -122,10 +129,21 @@ public class CalendarUtil {
 
 		return getFormatDateString(cal.getTime(), dateFormat);
 	}
+	
+	public static String getFormatDateString(Calendar cal, String dateFormat, Locale locale) {
+
+		return getFormatDateString(cal.getTime(), dateFormat, locale);		
+	}
 
 	public static String getFormatDateString(Date date, String dateFormat) {
 
 		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+		return sdf.format(date);
+	}
+	
+	public static String getFormatDateString(Date date, String dateFormat, Locale locale) {
+
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat, locale);
 		return sdf.format(date);
 	}
 
