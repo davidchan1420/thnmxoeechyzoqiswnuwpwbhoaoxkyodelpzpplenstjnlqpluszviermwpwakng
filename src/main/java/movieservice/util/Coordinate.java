@@ -1,6 +1,44 @@
 package movieservice.util;
 
-public class Coordinate {
+import java.util.Calendar;
+
+import movieservice.domain.Movie;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Coordinate implements Parcelable {
+	
+	@Override
+	public int describeContents() {
+		return this.hashCode();
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		dest.writeDouble(x);
+		dest.writeDouble(y);
+		dest.writeString(cinemaEnglish);
+		dest.writeString(cinemaChinese);		
+	}
+
+	public Coordinate(Parcel in) {
+		
+		x = in.readDouble();
+		y = in.readDouble();
+		cinemaEnglish = in.readString();
+		cinemaChinese = in.readString();
+	}
+	
+	public static final Parcelable.Creator<Coordinate> CREATOR = new Parcelable.Creator<Coordinate>() {
+		public Coordinate createFromParcel(Parcel in) {
+			return new Coordinate(in);
+		}
+
+		public Coordinate[] newArray(int size) {
+			return new Coordinate[size];
+		}
+	};	
+	
 	protected Double x;
 	protected Double y;
 	protected String cinemaEnglish;
@@ -86,5 +124,7 @@ public class Coordinate {
 		}
 		return false;
 	}
+
+
 
 }
