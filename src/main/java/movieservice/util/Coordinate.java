@@ -1,8 +1,5 @@
 package movieservice.util;
 
-import java.util.Calendar;
-
-import movieservice.domain.Movie;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -17,16 +14,20 @@ public class Coordinate implements Parcelable {
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeDouble(x);
 		dest.writeDouble(y);
-		dest.writeString(cinemaEnglish);
-		dest.writeString(cinemaChinese);		
+//		dest.writeString(cinemaEnglish);
+//		dest.writeString(cinemaChinese);
+		dest.writeValue(cinemaEnglish);
+		dest.writeValue(cinemaChinese);
 	}
 
 	public Coordinate(Parcel in) {
 		
 		x = in.readDouble();
 		y = in.readDouble();
-		cinemaEnglish = in.readString();
-		cinemaChinese = in.readString();
+//		cinemaEnglish = in.readString();
+//		cinemaChinese = in.readString();
+		cinemaEnglish = (String) in.readValue(Coordinate.class.getClassLoader());
+		cinemaChinese = (String) in.readValue(Coordinate.class.getClassLoader());
 	}
 	
 	public static final Parcelable.Creator<Coordinate> CREATOR = new Parcelable.Creator<Coordinate>() {

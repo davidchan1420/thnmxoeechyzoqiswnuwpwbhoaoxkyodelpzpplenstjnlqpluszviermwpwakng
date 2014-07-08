@@ -10,7 +10,7 @@ public class Temp1 implements Parcelable, Serializable {
 
 	private static final long serialVersionUID = -9063117125382167569L;
 	private String name;
-	private Coordinate coordinate;
+//	private Coordinate coordinate;
 	
 	@Override
 	public int describeContents() {
@@ -22,13 +22,13 @@ public class Temp1 implements Parcelable, Serializable {
 	public void writeToParcel(Parcel dest, int flags) {
 		
 		dest.writeString(name);
-		dest.writeParcelable(coordinate, flags);		
+//		dest.writeParcelable(coordinate, flags);		
 	}
 	
 	public Temp1(Parcel in){
 		
 		name = in.readString();
-		coordinate = in.readParcelable(Temp1.class.getClassLoader());
+//		coordinate = in.readParcelable(Temp1.class.getClassLoader());
 	}
 	
 	public static final Parcelable.Creator<Temp1> CREATOR = new Parcelable.Creator<Temp1>() {
@@ -49,16 +49,14 @@ public class Temp1 implements Parcelable, Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}	
-	
-	
 
-	public Coordinate getCoordinate() {
-		return coordinate;
-	}
-
-	public void setCoordinate(Coordinate coordinate) {
-		this.coordinate = coordinate;
-	}
+//	public Coordinate getCoordinate() {
+//		return coordinate;
+//	}
+//
+//	public void setCoordinate(Coordinate coordinate) {
+//		this.coordinate = coordinate;
+//	}
 
 	public Temp1(){}
 	

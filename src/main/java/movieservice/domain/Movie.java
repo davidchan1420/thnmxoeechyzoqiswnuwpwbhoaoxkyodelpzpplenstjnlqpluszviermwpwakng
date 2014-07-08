@@ -1,15 +1,12 @@
 package movieservice.domain;
 
-import java.io.Serializable;
 import java.util.Calendar;
 
+import movieservice.util.Coordinate;
 import android.os.Parcel;
 import android.os.Parcelable;
-import movieservice.util.Coordinate;
 
-public class Movie implements Parcelable, Serializable {
-
-	private static final long serialVersionUID = -5378086385821148068L;
+public class Movie implements Parcelable {
 
 	@Override
 	public int describeContents() {
@@ -21,10 +18,8 @@ public class Movie implements Parcelable, Serializable {
 		dest.writeString(movieName);
 		dest.writeString(cinema);
 		dest.writeSerializable(showingDate);
-//		dest.writeInt(fee == null ? 0 : fee);
 		dest.writeValue(fee);
 		dest.writeParcelable(coordinate, flags);
-//		dest.writeDouble(relativeDistance == null ? 0D : relativeDistance);
 		dest.writeValue(relativeDistance);
 	}
 
@@ -32,10 +27,8 @@ public class Movie implements Parcelable, Serializable {
          movieName = in.readString();
          cinema = in.readString();
          showingDate = (Calendar) in.readSerializable();
-//         fee = (in.readInt() == 0 ? null : in.readInt());
          fee = (Integer) in.readValue(Movie.class.getClassLoader());         
          coordinate = in.readParcelable(Movie.class.getClassLoader());
-//         relativeDistance = (in.readDouble() == 0D ? null : in.readDouble());
          relativeDistance = (Double) in.readValue(Movie.class.getClassLoader());
     }
 
@@ -49,7 +42,6 @@ public class Movie implements Parcelable, Serializable {
 		}
 	};	
 
-
 	private String movieName;
 	private String cinema;
 	private Calendar showingDate;
@@ -58,9 +50,8 @@ public class Movie implements Parcelable, Serializable {
 //	private Double x;
 //	private Double y;
 	public Coordinate coordinate;
-
-
 	private Double relativeDistance;
+		
 	
 	public Movie(){}
 	
