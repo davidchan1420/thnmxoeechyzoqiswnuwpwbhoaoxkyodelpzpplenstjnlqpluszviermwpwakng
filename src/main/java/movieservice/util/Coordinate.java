@@ -1,10 +1,14 @@
 package movieservice.util;
 
+import java.io.Serializable;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Coordinate implements Parcelable {
+public class Coordinate implements Parcelable, Serializable {
 	
+	private static final long serialVersionUID = 4749998522564694432L;
+
 	@Override
 	public int describeContents() {
 		return this.hashCode();
