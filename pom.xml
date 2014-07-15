@@ -24,7 +24,7 @@
 			<artifactId>myArtifactId</artifactId>
 			<version>19</version>
 			<scope>system</scope>
-			<systemPath>/home/roamerchan/Program/android-sdk-linux/platforms/android-19/android.jar</systemPath>
+			<systemPath>/home/roamerecom/Program/android-sdk-linux/platforms/android-19/android.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
