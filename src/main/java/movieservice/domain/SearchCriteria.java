@@ -98,9 +98,9 @@ public class SearchCriteria {
 	}
 
 	public void setDistanceRange(Integer distanceRange) {
-		if(distanceRange == 0){
-			distanceRange = null;
-		}
+//		if(distanceRange == 0){
+//			distanceRange = null;
+//		}
 		this.distanceRange = distanceRange;
 	}
 
