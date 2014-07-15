@@ -1,12 +1,16 @@
 package movieservice.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 import movieservice.util.Coordinate;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Movie implements Parcelable {
+public class Movie implements Parcelable, Serializable {
+
+	private static final long serialVersionUID = 5505282358443423417L;
+
 
 	@Override
 	public int describeContents() {
