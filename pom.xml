@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>MovieService_Common</groupId>
 	<artifactId>MovieService_Common</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1</version>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
@@ -24,7 +24,7 @@
 			<artifactId>myArtifactId</artifactId>
 			<version>19</version>
 			<scope>system</scope>
-			<systemPath>/home/roamerchan/Program/android-sdk-linux/platforms/android-19/android.jar</systemPath>
+			<systemPath>/home/roamerecom/Program/android-sdk-linux/platforms/android-19/android.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
