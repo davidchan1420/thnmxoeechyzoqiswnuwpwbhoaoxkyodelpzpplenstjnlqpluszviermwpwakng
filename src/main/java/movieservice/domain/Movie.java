@@ -67,9 +67,7 @@ public class Movie implements Parcelable, Serializable {
 	private Double relativeDistance;
 
 	public Movie() {
-		setNormalSeat(0);
-		setVibratingSeat(0);
-		setWheelChairSeat(0);
+
 	}
 
 	public String getMovieName() {
