@@ -20,8 +20,8 @@ repositories {
 }
 
 dependencies {
-
-	compile files('/home/roamerecom/Program/android-sdk-linux/platforms/android-19/android.jar')
+		
+    compile files('/home/roamerecom/Program/android-sdk-linux/platforms/android-21/android.jar')
 	
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
