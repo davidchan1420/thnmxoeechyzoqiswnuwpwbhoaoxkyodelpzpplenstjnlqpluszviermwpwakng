@@ -22,9 +22,10 @@
 		<dependency>
 			<groupId>myGroupId</groupId>
 			<artifactId>myArtifactId</artifactId>
-			<version>19</version>
+			<version>21</version>
+			<!-- For compile time usage, maven clean install won't pack this jar for runtime!! -->
 			<scope>system</scope>
-			<systemPath>/home/roamerecom/Program/android-sdk-linux/platforms/android-19/android.jar</systemPath>
+			<systemPath>/home/roamerchan/Program/android-sdk-linux/platforms/android-21/android.jar</systemPath>
 		</dependency>
 	</dependencies>
 </project>
